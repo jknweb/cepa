@@ -108,12 +108,15 @@ export function Hero() {
             <div className="absolute -left-6 top-10 h-24 w-24 rounded-full bg-blue-100 blur-2xl" />
             <div className="absolute -right-3 bottom-0 h-40 w-40 rounded-full bg-red-100 blur-2xl" />
             <div className="relative overflow-hidden rounded-[32px] bg-white p-6 shadow-2xl shadow-slate-200/60 ring-1 ring-slate-200">
-              <img
-                key={slide.image}
-                src={slide.image}
-                alt={slide.title}
-                className="h-[520px] w-full rounded-[24px] object-cover transition duration-700 ease-out"
-              />
+              <div className="relative h-[520px] overflow-hidden rounded-[24px]">
+                <img
+                  key={slide.image}
+                  src={slide.image}
+                  alt={slide.title}
+                  className="h-full w-full object-cover transition duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 via-transparent to-transparent" />
+              </div>
             </div>
           </div>
         </div>
