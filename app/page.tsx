@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -76,15 +77,23 @@ export default async function Home() {
                 <p className="text-sm text-slate-500">Directrice Générale</p>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative mx-auto w-full max-w-xl">
               <div className="absolute -top-6 -left-6 h-24 w-24 rounded-3xl bg-blue-100" />
               <div className="absolute -bottom-6 -right-6 h-24 w-24 rounded-3xl bg-red-100" />
-              <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 p-3">
-                <img
-                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80"
-                  alt="Directrice générale"
-                  className="h-[520px] w-full rounded-2xl object-cover"
-                />
+              <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 p-3 shadow-xl shadow-slate-200/60 transition duration-500 hover:-translate-y-1">
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src="/kadi.jpg"
+                    alt="Madame Kadiathou Kone"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover object-center transition duration-700 ease-out hover:scale-105"
+                  />
+                  <div className="absolute bottom-4 right-4 rounded-2xl bg-white/90 px-4 py-2 backdrop-blur-sm shadow-sm">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-900">DG</p>
+                    <p className="text-sm font-medium text-slate-700">Kadiathou Kone</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
