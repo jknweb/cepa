@@ -83,7 +83,7 @@ export default async function Home() {
               <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 p-3 shadow-xl shadow-slate-200/60 transition duration-500 hover:-translate-y-1">
                 <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
                   <Image
-                    src="/kadi.jpg"
+                    src="/kadi.jpeg"
                     alt="Madame Kadiathou Kone"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
