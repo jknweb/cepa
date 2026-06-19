@@ -1,0 +1,84 @@
+{
+  "stats": [
+    { "id": "trained", "label": "Personnes formées", "value": "+1 500" },
+    { "id": "sessions", "label": "Sessions de formation", "value": "+120" },
+    { "id": "agro", "label": "Projets Agrobusiness", "value": "45" },
+    { "id": "satisfaction", "label": "Taux de satisfaction", "value": "98%" }
+  ],
+  "services": [
+    {
+      "id": "etudes",
+      "title": "Études et diagnostics",
+      "description": "Études stratégiques, évaluations de performance et diagnostic institutionnel.",
+      "icon": "BadgeCheck"
+    },
+    {
+      "id": "conseil",
+      "title": "Conseil stratégique",
+      "description": "Accompagnement des décideurs dans la définition de politiques et des plans d'action.",
+      "icon": "BriefcaseBusiness"
+    },
+    {
+      "id": "formation",
+      "title": "Formation professionnelle",
+      "description": "Programmes sur mesure pour renforcer les compétences des équipes et cadres.",
+      "icon": "GraduationCap"
+    },
+    {
+      "id": "agrobusiness",
+      "title": "Agrobusiness",
+      "description": "Développement durable, modernisation des filières et optimisation des chaînes de valeur.",
+      "icon": "ChartNoAxesCombined"
+    }
+  ],
+  "prestations": [
+    {
+      "id": "p1",
+      "title": "Étude d'impact environnemental pour les filières agricoles",
+      "category": "Études",
+      "excerpt": "Analyse approfondie des pratiques agricoles et recommandations de transformation durable.",
+      "date": "Mai 2026"
+    },
+    {
+      "id": "p2",
+      "title": "Formation des cadres de l'administration publique",
+      "category": "Formation",
+      "excerpt": "Programme intensif sur la gestion des projets, la gouvernance et le leadership.",
+      "date": "Avril 2026"
+    },
+    {
+      "id": "p3",
+      "title": "Conseil stratégique pour l'optimisation des chaînes de valeur",
+      "category": "Conseil",
+      "excerpt": "Modélisation des opérations, mise en place d'indicateurs et plan d'amélioration.",
+      "date": "Mars 2026"
+    }
+  ],
+  "skills": [
+    {
+      "id": "ops",
+      "title": "Excellence opérationnelle",
+      "description": "Amélioration des processus et renforcement de l'efficience institutionnelle.",
+      "icon": "Layers3"
+    },
+    {
+      "id": "data",
+      "title": "Analyse de données",
+      "description": "Décodage des tendances, pilotage par les données et décisions éclairées.",
+      "icon": "BarChart3"
+    },
+    {
+      "id": "sustainability",
+      "title": "Stratégie de développement durable",
+      "description": "Conception d'initiatives responsables et résilientes sur le terrain.",
+      "icon": "Leaf"
+    },
+    {
+      "id": "agri",
+      "title": "Modernisation agricole",
+      "description": "Innovation, optimisation de la production et accompagnement des acteurs du secteur.",
+      "icon": "Sprout"
+    }
+  ],
+  "contactMessages": []
+}
