@@ -99,16 +99,35 @@ export function Hero() {
             <div className="absolute -right-3 bottom-0 h-40 w-40 rounded-full bg-red-100 blur-2xl" />
             <div className="relative overflow-hidden rounded-[32px] bg-white p-4 shadow-2xl shadow-slate-200/60 ring-1 ring-slate-200 sm:p-6">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[22px] sm:aspect-[5/6]">
-                <Image
-                  key={slide.image}
-                  src={slide.image}
-                  alt={slide.title}
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-center transition duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] scale-105"
-                />
+                <div
+                  className="flex h-full w-full transition-transform duration-700 ease-out"
+                  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                >
+                  {slides.map((item) => (
+                    <div key={item.image} className="relative min-w-full">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        priority
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover object-center"
+                      />
+                    </div>
+                  ))}
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 via-transparent to-transparent" />
+              </div>
+              <div className="mt-3 flex justify-center gap-2">
+                {slides.map((_, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => setCurrentSlide(index)}
+                    className={`h-2.5 rounded-full transition-all ${index === currentSlide ? "w-8 bg-blue-900" : "w-2.5 bg-slate-300 hover:bg-slate-400"}`}
+                    aria-label={`Aller à la diapositive ${index + 1}`}
+                  />
+                ))}
               </div>
             </div>
           </div>
