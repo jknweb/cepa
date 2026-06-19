@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, BriefcaseBusiness, ChartNoAxesCombined, GraduationCap } from "lucide-react";
 
@@ -33,32 +34,21 @@ const slides = [
     title: "Propulsez votre performance institutionnelle et agricole",
     description:
       "Le Cabinet Elite Performing accompagne les institutions, les entreprises et les acteurs agricoles dans leurs stratégies, leurs formations et leurs transformations.",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+    image: "/cea1.jpeg",
   },
   {
     badge: "Conseil stratégique & gouvernance",
     title: "Renforcer la vision, la gouvernance et la prise de décision",
     description:
       "Nous aidons les organisations à clarifier leurs objectifs, structurer leurs plans et bâtir des décisions performantes à long terme.",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+    image: "/cea2.jpeg",
   },
   {
     badge: "Formation & montée en compétences",
     title: "Former les équipes pour accélérer les résultats",
     description:
       "Nos programmes de formation permettent aux équipes d’acquérir les compétences clés pour évoluer dans un environnement exigeant.",
-    image:
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    badge: "Innovation agricole durable",
-    title: "Créer de la valeur dans l’agrobusiness avec des solutions durables",
-    description:
-      "Des approches pragmatiques pour améliorer les performances agricoles, la productivité et la résilience des filières.",
-    image:
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80",
+    image: "/cea3.jpeg",
   },
 ];
 
@@ -107,13 +97,16 @@ export function Hero() {
           <div className="relative mx-auto w-full max-w-2xl">
             <div className="absolute -left-6 top-10 h-24 w-24 rounded-full bg-blue-100 blur-2xl" />
             <div className="absolute -right-3 bottom-0 h-40 w-40 rounded-full bg-red-100 blur-2xl" />
-            <div className="relative overflow-hidden rounded-[32px] bg-white p-6 shadow-2xl shadow-slate-200/60 ring-1 ring-slate-200">
-              <div className="relative h-[520px] overflow-hidden rounded-[24px]">
-                <img
+            <div className="relative overflow-hidden rounded-[32px] bg-white p-4 shadow-2xl shadow-slate-200/60 ring-1 ring-slate-200 sm:p-6">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[22px] sm:aspect-[5/6]">
+                <Image
                   key={slide.image}
                   src={slide.image}
                   alt={slide.title}
-                  className="h-full w-full object-cover transition duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] scale-105"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-center transition duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 via-transparent to-transparent" />
               </div>
