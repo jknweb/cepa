@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, BriefcaseBusiness, ChartNoAxesCombined, GraduationCap } from "lucide-react";
 
@@ -24,22 +27,67 @@ const overlayCards = [
   },
 ];
 
+const slides = [
+  {
+    badge: "Cabinet d’expertise et d’accompagnement",
+    title: "Propulsez votre performance institutionnelle et agricole",
+    description:
+      "Le Cabinet Elite Performing accompagne les institutions, les entreprises et les acteurs agricoles dans leurs stratégies, leurs formations et leurs transformations.",
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    badge: "Conseil stratégique & gouvernance",
+    title: "Renforcer la vision, la gouvernance et la prise de décision",
+    description:
+      "Nous aidons les organisations à clarifier leurs objectifs, structurer leurs plans et bâtir des décisions performantes à long terme.",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    badge: "Formation & montée en compétences",
+    title: "Former les équipes pour accélérer les résultats",
+    description:
+      "Nos programmes de formation permettent aux équipes d’acquérir les compétences clés pour évoluer dans un environnement exigeant.",
+    image:
+      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    badge: "Innovation agricole durable",
+    title: "Créer de la valeur dans l’agrobusiness avec des solutions durables",
+    description:
+      "Des approches pragmatiques pour améliorer les performances agricoles, la productivité et la résilience des filières.",
+    image:
+      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80",
+  },
+];
+
 export function Hero() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const slide = slides[currentSlide];
+
   return (
-    <section id="home" className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50 px-4 pb-24 pt-16 sm:px-6 lg:px-8">
+    <section id="home" className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50 px-4 pb-32 pt-16 sm:px-6 lg:px-8">
       <div className="absolute inset-x-0 top-0 h-64 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.08),transparent_60%)]" />
       <div className="relative mx-auto max-w-7xl">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-          <div>
+          <div className="transition-all duration-700 ease-out">
             <span className="inline-flex rounded-full bg-red-50 px-4 py-2 text-sm font-semibold text-red-600">
-              Cabinet d’expertise et d’accompagnement
+              {slide.badge}
             </span>
             <h1 className="mt-6 max-w-2xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-              Propulsez votre performance institutionnelle et agricole
+              {slide.title}
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-              Le Cabinet Elite Performing accompagne les institutions, les entreprises et les acteurs agricoles dans leurs stratégies, leurs formations et leurs transformations.
-            </p>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">{slide.description}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact"
@@ -61,15 +109,16 @@ export function Hero() {
             <div className="absolute -right-3 bottom-0 h-40 w-40 rounded-full bg-red-100 blur-2xl" />
             <div className="relative overflow-hidden rounded-[32px] bg-white p-6 shadow-2xl shadow-slate-200/60 ring-1 ring-slate-200">
               <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
-                alt="Équipe de professionnels"
-                className="h-[520px] w-full rounded-[24px] object-cover"
+                key={slide.image}
+                src={slide.image}
+                alt={slide.title}
+                className="h-[520px] w-full rounded-[24px] object-cover transition duration-700 ease-out"
               />
             </div>
           </div>
         </div>
 
-        <div className="relative z-10 mx-auto mt-[-2rem] grid max-w-6xl gap-4 rounded-3xl bg-white p-4 shadow-xl shadow-slate-200/70 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="relative z-10 mx-auto mt-16 grid max-w-6xl gap-4 rounded-3xl bg-white p-4 shadow-xl shadow-slate-200/70 sm:grid-cols-2 xl:grid-cols-4">
           {overlayCards.map((card) => (
             <div
               key={card.title}
