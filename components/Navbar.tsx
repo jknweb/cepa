@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
@@ -18,12 +19,19 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-900 text-sm font-semibold text-white">
-              CE
-            </span>
-            <span className="text-sm font-semibold tracking-wide text-slate-900 sm:text-base">
+        <div className="flex h-20 items-center justify-between gap-3">
+          <Link href="/" className="flex min-w-0 items-center gap-2 sm:gap-3">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 sm:h-14 sm:w-14">
+              <Image
+                src="/logo.jpeg"
+                alt="Logo Cabinet Elite Performing"
+                width={56}
+                height={56}
+                priority
+                className="h-9 w-9 rounded-xl object-contain sm:h-10 sm:w-10"
+              />
+            </div>
+            <span className="hidden text-sm font-semibold tracking-wide text-slate-900 sm:block sm:text-base lg:text-lg">
               Cabinet Elite Performing
             </span>
           </Link>
