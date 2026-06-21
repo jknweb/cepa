@@ -34,7 +34,7 @@
   "prestations": [
     {
       "id": "p1",
-      "title": "Étude d'impact environnemental pour les filières agricoles",
+      "title": "Prévention et la gestion des conflits en milieux hospitalier.",
       "category": "Études",
       "excerpt": "Analyse approfondie des pratiques agricoles et recommandations de transformation durable.",
       "date": "Mai 2026",
@@ -43,7 +43,7 @@
     },
     {
       "id": "p2",
-      "title": "Formation des cadres de l'administration publique",
+      "title": "Formation à la gestion administrative des projets et des programmes",
       "category": "Formation",
       "excerpt": "Programme intensif sur la gestion des projets, la gouvernance et le leadership.",
       "date": "Avril 2026",
@@ -52,7 +52,7 @@
     },
     {
       "id": "p3",
-      "title": "Conseil stratégique pour l'optimisation des chaînes de valeur",
+      "title": "Formation en leadership et conduite du changement",
       "category": "Conseil",
       "excerpt": "Modélisation des opérations, mise en place d'indicateurs et plan d'amélioration.",
       "date": "Mars 2026",
