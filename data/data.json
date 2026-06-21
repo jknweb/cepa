@@ -37,46 +37,70 @@
       "title": "Étude d'impact environnemental pour les filières agricoles",
       "category": "Études",
       "excerpt": "Analyse approfondie des pratiques agricoles et recommandations de transformation durable.",
-      "date": "Mai 2026"
+      "date": "Mai 2026",
+      "image": "/cea2.jpeg",
+      "details": "Cette prestation a permis de réaliser un diagnostic complet des pratiques agricoles, d'identifier les principaux leviers de réduction des impacts environnementaux et de proposer des recommandations concrètes pour une transition durable."
     },
     {
       "id": "p2",
       "title": "Formation des cadres de l'administration publique",
       "category": "Formation",
       "excerpt": "Programme intensif sur la gestion des projets, la gouvernance et le leadership.",
-      "date": "Avril 2026"
+      "date": "Avril 2026",
+      "image": "/cea3.jpeg",
+      "details": "Le programme de renforcement des capacités a été conçu pour répondre aux besoins réels des managers publics en matière de gouvernance, de gestion de projet et d'amélioration de la performance institutionnelle."
     },
     {
       "id": "p3",
       "title": "Conseil stratégique pour l'optimisation des chaînes de valeur",
       "category": "Conseil",
       "excerpt": "Modélisation des opérations, mise en place d'indicateurs et plan d'amélioration.",
-      "date": "Mars 2026"
+      "date": "Mars 2026",
+      "image": "/cea1.jpeg",
+      "details": "L'accompagnement stratégique a porté sur l'analyse des chaines de valeur, la mise en place d'indicateurs de performance et la définition d'actions ciblées pour améliorer l'efficience et la compétitivité."
     }
   ],
   "skills": [
     {
-      "id": "ops",
-      "title": "Excellence opérationnelle",
-      "description": "Amélioration des processus et renforcement de l'efficience institutionnelle.",
+      "id": "etudes",
+      "title": "Études",
+      "description": "Analyse, diagnostic et recherche pour des décisions éclairées.",
+      "icon": "BadgeCheck"
+    },
+    {
+      "id": "formations",
+      "title": "Formations",
+      "description": "Programmes de renforcement des compétences et d'innovation pédagogique.",
+      "icon": "GraduationCap"
+    },
+    {
+      "id": "conseil",
+      "title": "Assistance conseil",
+      "description": "Accompagnement stratégique et appui aux organisations dans leurs transformations.",
+      "icon": "BriefcaseBusiness"
+    },
+    {
+      "id": "recrutement",
+      "title": "Recrutement",
+      "description": "Sélection de profils adaptés aux besoins des structures et projets.",
       "icon": "Layers3"
     },
     {
-      "id": "data",
-      "title": "Analyse de données",
-      "description": "Décodage des tendances, pilotage par les données et décisions éclairées.",
+      "id": "gestion",
+      "title": "Gestion projets",
+      "description": "Pilotage, coordination et suivi des initiatives complexes.",
       "icon": "BarChart3"
     },
     {
-      "id": "sustainability",
-      "title": "Stratégie de développement durable",
-      "description": "Conception d'initiatives responsables et résilientes sur le terrain.",
+      "id": "agro",
+      "title": "Agrobusiness",
+      "description": "Développement des filières et optimisation des performances agricoles.",
       "icon": "Leaf"
     },
     {
-      "id": "agri",
-      "title": "Modernisation agricole",
-      "description": "Innovation, optimisation de la production et accompagnement des acteurs du secteur.",
+      "id": "elevage",
+      "title": "Élevage et agriculture",
+      "description": "Appui au développement durable des secteurs agricoles et d'élevage.",
       "icon": "Sprout"
     }
   ],

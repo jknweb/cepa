@@ -16,6 +16,7 @@ import {
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
+import { PrestationsSection } from "@/components/PrestationsSection";
 import { getData } from "@/lib/data";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -38,24 +39,38 @@ export default async function Home() {
       <Hero />
 
       <section id="services" className="px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-900">Nos services</p>
-            <h2 className="mt-3 text-3xl font-semibold text-slate-900">Des solutions adaptées à chaque enjeu</h2>
-          </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {data.services.map((service) => {
-              const Icon = iconMap[service.icon] ?? BadgeCheck;
-              return (
-                <article key={service.id} className="rounded-3xl bg-white p-7 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-900/5 text-blue-900">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="mt-5 text-xl font-semibold text-slate-900">{service.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{service.description}</p>
-                </article>
-              );
-            })}
+        <div className="mx-auto max-w-7xl rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200 lg:p-12">
+          <div className="grid gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-900">Présentation du cabinet</p>
+              <h2 className="mt-3 text-3xl font-semibold text-slate-900">Un cabinet engagé pour le développement</h2>
+              <div className="mt-6 space-y-5 text-base leading-7 text-slate-600">
+                <p>
+                  CAEP est un cabinet d&apos;études, de formation et d&apos;assistance-conseil en économie et développement. Il veut contribuer au développement socio-économique du Burkina Faso et de l&apos;Afrique en général à travers la mise à disposition d&apos;études de qualité en relation avec les problématiques majeures du développement.
+                </p>
+                <p>
+                  CAEP assure également le renforcement des capacités à travers des formations pointues répondant aux besoins des agents et cadres des administrations publiques, privées, des projets et programmes de développement, des ONG/OSC et des institutions internationales.
+                </p>
+                <p>
+                  CAEP apporte écoute, assistance et conseil aux jeunes sur les questions d&apos;entrepreneuriat en les aidant à transformer leurs idées en opportunités d&apos;affaires.
+                </p>
+              </div>
+            </div>
+            <div className="relative mx-auto w-full max-w-2xl">
+              <div className="absolute -top-6 -left-6 h-24 w-24 rounded-3xl bg-blue-100" />
+              <div className="absolute -bottom-6 -right-6 h-24 w-24 rounded-3xl bg-red-100" />
+              <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 p-3 shadow-xl shadow-slate-200/60">
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src="/cea1.jpeg"
+                    alt="Équipe du cabinet CAEP"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover object-center"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -113,29 +128,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section id="prestations" className="px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-900">Prestations récentes</p>
-              <h2 className="mt-3 text-3xl font-semibold text-slate-900">Quelques réalisations récentes</h2>
-            </div>
-            <Link href="/prestations" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-900">
-              Voir toutes nos prestations <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {data.prestations.map((item) => (
-              <article key={item.id} className="rounded-3xl bg-white p-7 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1">
-                <span className="inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-900">{item.category}</span>
-                <h3 className="mt-4 text-xl font-semibold text-slate-900">{item.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{item.excerpt}</p>
-                <p className="mt-5 text-sm font-medium text-slate-400">{item.date}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PrestationsSection items={data.prestations} />
 
       <section className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl rounded-3xl bg-slate-900 px-8 py-14 text-white">
@@ -143,7 +136,7 @@ export default async function Home() {
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red-300">Compétences exploitées</p>
             <h2 className="mt-3 text-3xl font-semibold">Une expertise au service de vos objectifs</h2>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
             {data.skills.map((skill) => {
               const Icon = iconMap[skill.icon] ?? Layers3;
               return (

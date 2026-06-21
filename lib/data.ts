@@ -22,6 +22,8 @@ export interface PrestationsItem {
   category: string;
   excerpt: string;
   date: string;
+  image?: string;
+  details?: string;
 }
 
 export interface SkillItem {
