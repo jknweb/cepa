@@ -23,3 +23,20 @@ body {
   background: #bfdbfe;
   color: #0f172a;
 }
+
+@keyframes partner-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.partner-track {
+  animation: partner-scroll 36s linear infinite;
+}
+
+.partner-track:hover {
+  animation-play-state: paused;
+}

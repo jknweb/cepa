@@ -19,6 +19,24 @@ import { Navbar } from "@/components/Navbar";
 import { PrestationsSection } from "@/components/PrestationsSection";
 import { getData } from "@/lib/data";
 
+const partners = [
+  { name: "Burkina Faso", code: "bf" },
+  { name: "Côte d'Ivoire", code: "ci" },
+  { name: "Niger", code: "ne" },
+  { name: "Bénin", code: "bj" },
+  { name: "Togo", code: "tg" },
+  { name: "Sénégal", code: "sn" },
+  { name: "République centrafricaine", code: "cf" },
+  { name: "RDCongo", code: "cd" },
+  { name: "Brazzaville", code: "cg" },
+  { name: "Rwanda", code: "rw" },
+  { name: "Maroc", code: "ma" },
+  { name: "Tunisie", code: "tn" },
+  { name: "France", code: "fr" },
+  { name: "Dubai", code: "ae" },
+  { name: "Turquie", code: "tr" },
+];
+
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   BadgeCheck,
   BriefcaseBusiness,
@@ -149,6 +167,37 @@ export default async function Home() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-900">Pays partenaires</p>
+                <h2 className="mt-2 text-2xl font-semibold text-slate-900 sm:text-3xl">Des collaborations à l’échelle mondiale</h2>
+              </div>
+            </div>
+            <div className="mt-8 overflow-hidden rounded-2xl bg-slate-50 p-4">
+              <div className="partner-track flex w-max gap-4">
+                {[...partners, ...partners].map((partner, index) => (
+                  <div
+                    key={`${partner.code}-${index}`}
+                    className="group flex min-w-[180px] items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 transition duration-300 hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50/50"
+                  >
+                    <img
+                      src={`https://flagcdn.com/w80/${partner.code}.png`}
+                      alt={partner.name}
+                      className="h-8 w-12 rounded-md object-cover shadow-sm"
+                      loading="lazy"
+                    />
+                    <span className="text-sm font-medium text-slate-700">{partner.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
